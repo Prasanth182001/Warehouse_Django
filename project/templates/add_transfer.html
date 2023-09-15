@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1>Add Transfers</h1>
+<form method="POST">
+    <label>DateTime</label>
+    <input type="datetime-local">
+    <label>Products</label>
+    <select name="a_from">
+        {% for d in dt %}
+        <option>{{}}</option>
+        {% endfor %}
+    </select>
+    <label>From_L</label>
+    <select name="a_from">
+        {% for d in dt %}
+        <option>{{}}</option>
+        {% endfor %}
+    </select>
+    <label>To_L</label>
+    <select name="a_from">
+        {% for d in dt %}
+        <option>{{}}</option>
+        {% endfor %}
+    </select>
+    <label>Quantity</label>
+    <input type="number" required="">
+    {% csrf_token %}
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

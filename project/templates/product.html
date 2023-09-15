@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h1>Products</h1>
+<a href="adp/">Add</a>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Qty</th>
+    </tr>
+    <tr>
+        {% for i in data %}
+        <td>{{i.Products}}</td>
+        <td>{{i.Quantity}}</td>
+        <td><a href="/editp/{{i.id}}">Edit</a><a onclick="return confirm('Are you sure to delete ?')" href="/delp/{{i.id}}">Delete</a></td>
+    </tr>
+        {% endfor %}
+</table>
+
+{% endblock %}

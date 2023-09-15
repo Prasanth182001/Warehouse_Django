@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h1>Transfers</h1>
+<a href="adt/">Add</a>
+<table>
+    <tr>
+        <th>TimeStamp</th>
+        <th>Products</th>
+        <th>From_L</th>
+        <th>To_L</th>
+        <th>Qty</th>
+    </tr>
+    <tr>
+        {% for i in data %}
+        <td>{{i.Timestamp}}</td>
+        <td>{{i.Products}}</td>
+        <td>{{i.From_L}}</td>
+        <td>{{i.To_L}}</td>
+        <td>{{i.Quantity}}</td>
+        <td><a href="#">Edit</a><a onclick="return confirm('Are you sure to delete ?')" href="#">Delete</a></td>
+    </tr>
+        {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h1>Locations</h1>
+<a href="adl/">Add</a>
+<table>
+    <tr>
+        <th>Name</th>
+    </tr>
+    <tr>
+        {% for i in data %}
+        <td>{{i.Location}}</td>
+        <td><a href="/editl/{{i.id}}">Edit</a><a onclick="return confirm('Are you sure to delete ?')" href="/deletl/{{i.id}}">Delete</a></td>
+    </tr>
+        {% endfor %}
+</table>
+
+{% endblock %}
